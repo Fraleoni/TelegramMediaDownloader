@@ -1,0 +1,45 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments / secrets (keep the template)
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+ENV/
+
+# Telethon session files (contain the account auth key: never commit)
+*.session
+*.session-journal
+
+# Download folder and partial downloads
+downloads/
+*.part
+
+# Packaging / tooling caches
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Logs
+*.log
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+.claude/settings.local.json
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store
