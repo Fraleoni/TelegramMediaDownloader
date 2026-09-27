@@ -325,8 +325,10 @@ def matches_pattern(
                 pattern_stem = pattern_stem[: -len(ext)]
                 break
 
-        # Check wildcard without extension on caption
-        if pattern_stem and fnmatch.fnmatch(caption_lower, f"*{pattern_stem.strip('*')}*"):
+                # Check wildcard without extension on caption.
+        # Ignore bare wildcard stems (e.g. '*.mp4' -> '*') which would otherwise match any caption.
+        clean_stem = pattern_stem.strip("*").strip()
+        if clean_stem and fnmatch.fnmatch(caption_lower, f"*{clean_stem}*"):
             return True
 
         # Check substring match on caption
